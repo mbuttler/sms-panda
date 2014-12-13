@@ -4,40 +4,26 @@ Welcome to the SMS Panda [ ![Codeship Status for massaad/sms-phone-gateway](http
 
 ### What is this repository for? ###
 
-SMS gateway at [https://lit-falls-9948.herokuapp.com/pages/home](https://lit-falls-9948.herokuapp.com/pages/home)
+SMS gateway at zzv.ca
 
 ### How do I get set up? ###
 
-* gem 'rails'
-* gem 'twilio-ruby'
-* gem 'mail'
-* bundle install-izzle
-* heroku deployment via codeship.io > just push a passing branch and make a PR before you merge to master
+* uses Docker in production to contain all gems inside a simple container
 * Twilio account . . .for now
 
 
 ### Contribution guidelines ###
 
-* Test locally, Twilio is set to send GET for sms now
+* Test locally, Twilio is set to send GET for sms now, the new numbers default to POST.
 * Generally push to your feature branch
 
 ### Who do I talk to? ###
 
-* Massaad
+* AMassaad
 
 An example Twilio message request ends with
-
-?ToCountry=CA&ToState=ON&SmsMessageSid=SMa1c87d031c29d882a8975d773455c107&NumMedia=0&ToCity=OTTAWA&FromZip=&SmsSid=SMa1c87d031c29d882a8975d773455c107&FromState=ON&SmsStatus=received&FromCity=OTTAWA&Body=Boo+&FromCountry=CA&To=%2B16136996738&ToZip=&MessageSid=SMa1c87d031c29d882a8975d773455c107&AccountSid=AC4474fb44063b4118e729013bd9e9a5dd&From=%2B16138584587&ApiVersion=2010-04-01
-
-or
-
-/messagesincoming/1/de63ded?ToCountry=CA&ToState=ON&SmsMessageSid=SMa1c87d031c29d882a8975d773455c107&NumMedia=0&ToCity=OTTAWA&FromZip=&SmsSid=SMa1c87d031c29d882a8975d773455c107&FromState=ON&SmsStatus=received&FromCity=OTTAWA&Body=Boo+&FromCountry=CA&To=%2B16136996738&ToZip=&MessageSid=SMa1c87d031c29d882a8975d773455c107&AccountSid=AC4474fb44063b4118e729013bd9e9a5dd&From=%2B16138584587&ApiVersion=2010-04-01
-
-Latest, to my number (incomming)
 
 /messagesincoming/1/f61dbbe?ToCountry=CA&ToState=ON&SmsMessageSid=SMa1c87d031c29d882a8975d773455c107&NumMedia=0&ToCity=OTTAWA&FromZip=&SmsSid=SMa1c87d031c29d882a8975d773455c107&FromState=ON&SmsStatus=received&FromCity=OTTAWA&Body=Test+&FromCountry=CA&To=%2B16136996738&ToZip=&MessageSid=SMa1c87d031c29d882a8975d773455c107&AccountSid=AC4474fb44063b4118e729013bd9e9a5dd&From=%2B16138584587&ApiVersion=2010-04-01
 
 
 ?ToCountry=CA&ToState=ON&SmsMessageSid=SMa1c87d031c29d882a8975d773455c107&NumMedia=0&ToCity=OTTAWA&FromZip=&SmsSid=SMa1c87d031c29d882a8975d773455c107&FromState=ON&SmsStatus=received&FromCity=OTTAWA&Body=Test+&FromCountry=CA&To=%2B16136996738&ToZip=&MessageSid=SMa1c87d031c29d882a8975d773455c107&AccountSid=AC4474fb44063b4118e729013bd9e9a5dd&From=%2B16138584587&ApiVersion=2010-04-01
-
-https://alex:sms-panda@sms-panda.herokuapp.com
