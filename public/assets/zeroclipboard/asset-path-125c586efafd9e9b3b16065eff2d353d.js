@@ -1,0 +1,1 @@
+ZeroClipboard.config({swfPath:"/assets/ZeroClipboard-bfc1808beafbf50b14e45167f12297e0.swf"});

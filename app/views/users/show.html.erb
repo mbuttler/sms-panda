@@ -1,0 +1,72 @@
+<table class="profile" summary="Panda information (bamboo)">
+  <tr>
+    <td class="main">
+      <h1 class="message">What's on your Panda mind?</h1>
+
+      <%= form_for(@message) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+          <%= f.text_area :message, placeholder: "Compose new sms..." %>
+        </div>
+        <div class="field">
+          <%= f.label :to %><br>
+          <%= f.number_field :to, placeholder: "3335558899" %>
+          <%= f.hidden_field :from, :value => current_user.phone.to_i %>
+        </div>
+        <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+      <% end %>
+
+      
+       <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <% unless @user.messages.empty? %>
+      <table class="messages" summary="User messages">
+        <%= render @messages %>
+      </table>
+      <%= will_paginate @messages %>
+      <% end %>
+
+    </td>
+    <td class="sidebar round pulsate-bg">
+      <h2>Panda Info</h2>
+      =====================
+      <strong>Name</strong> <%= @user.name %><br />  
+      <strong>SMS Phone Number</strong> <%= @user.phone.to_i %> <br />
+      <a href="<%= messages_path %>">
+      <strong>Panda Messages</strong> <%= @user.messages.count %><br /></a>
+      <a href="<%= contacts_path %>">
+      <strong>Panda Friends</strong> <%= @user.contacts.count %><br /></a>
+      <strong>Email Forwarding:</strong> <%= @user.email_fwd %><br />
+      =====================
+      <strong> Balance: </strong> <%= @balance.to_i %><br />
+      <strong> Charges:  </strong> <%= @charges.to_i %><br />
+      <strong> Credits:  </strong> <%= @credits.to_i %><br />
+      =====================
+      <strong> Top Up on credits </strong><br />(don't do this)
+      <iframe class="shopify-widget" frameborder="0" scrolling="no" src="//widgets.shopifyapps.com/products/sms-panda-credit?shop=sms-panda.myshopify.com&style=buy_now&product-variant-id=1013309272&color=grey&size=large&text=Add+a+%245+credit&destination=checkout" width="143" height="30"></iframe>
+    </td>
+  </tr>
+</table>
+
+<strong>SMS Encrypted Route (keep this private)</strong><br /> 
+
+ <div id="d_clip_button" class="clip_button" data-clipboard-text="<%= @twurl %>" title="Click to copy." style="border:1px solid black; padding:20px;"> <%= @twurl %> <br /> </div>
+
+<br />
+<% if current_user.admin? %>
+  <strong>Site Wide Announcements (admin only):</strong><br />
+  <%= render 'admin_announce' %>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    var clip = new ZeroClipboard($("#d_clip_button"))
+  });
+
+  $("#clear-test").on("click", function(){
+    $("#fe_text").val("Copy me!");
+    $("#testarea").val("");
+  });
+</script>

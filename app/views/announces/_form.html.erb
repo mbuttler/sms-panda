@@ -1,0 +1,21 @@
+<% if @announce.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@announce.errors.count, "error") %> prohibited this announce from being saved:</h2>
+
+    <ul>
+    <% @announce.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@announce) do |f| %>
+  <div class="field">
+    <%= f.text_area :message, placeholder: "Compose new Site-Wide announce..." %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

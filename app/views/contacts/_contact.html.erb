@@ -1,0 +1,17 @@
+<li>
+  <span class="content"><%= contact.phone.to_i %>
+    <% if contact.name? %>
+        - <%= contact.name %><br />
+    <% else %>
+        <br />
+    <% end %>
+  </span>
+  <span class="timestamp">
+    Created <%= time_ago_in_words(contact.created_at) %> ago.
+  </span>
+  <% if current_user?(contact.user) %>
+    <%= link_to "delete", contact, method: :delete,
+                                     data: { confirm: 'You sure? (this is final.)' },
+                                     title: contact.phone %>
+  <% end %>
+</li>

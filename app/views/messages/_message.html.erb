@@ -1,0 +1,11 @@
+<li>
+  <span class="content"><%= message.message %></span><br />
+  <span class="timestamp">
+    &nbsp; &nbsp; &nbsp; &nbsp; → Posted <%= time_ago_in_words(message.created_at) %> ago by <%= message.from.to_i %>
+  </span>
+  <% if current_user?(message.user) %>
+    <%= link_to "delete", message, method: :delete,
+                                     data: { confirm: 'You sure? (this is final.)' },
+                                     title: message.message %>
+  <% end %>
+</li>

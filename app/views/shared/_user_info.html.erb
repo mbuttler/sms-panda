@@ -1,0 +1,16 @@
+<a href="<%= user_path(current_user) %>">
+  <%= gravatar_for current_user, :size => 180 %> <br />
+  <strong>
+    <span class="user_name">
+      <%= current_user.name %> has
+    </span>
+    <span class="messages"> 
+      <%= pluralize(current_user.messages.count, "message") %> and 
+      <%= pluralize(current_user.contacts.count, "contact") %>
+    </strong>
+  </span>
+</a>
+
+
+
+

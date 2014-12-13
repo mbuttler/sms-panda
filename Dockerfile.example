@@ -1,0 +1,17 @@
+FROM rails:4.1.8
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
+RUN mkdir /sms-panda
+WORKDIR /sms-panda
+ADD Gemfile /sms-panda/Gemfile
+RUN bundle install
+ENV SECRET_KEY_BASE insert
+ENV RAILS_ENV production
+ENV TSID insert
+ENV TTOKEN insert
+ENV MAILINUSER insert
+ENV MAILINPASS insert
+ENV MAILOUTUSER insert
+ENV MAILOUTPASS insert
+ENV SHOPIFY_AKEY insert
+ENV SHOPIFY_APASS insert
+ADD . /sms-panda

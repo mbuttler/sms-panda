@@ -1,0 +1,12 @@
+<%= form_for(@message) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :message, placeholder: "Compose new sms..." %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br>
+    <%= f.number_field :to, placeholder: "3335558899" %>
+    <%= f.hidden_field :from, :value => current_user.phone.to_i %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+<% end %>

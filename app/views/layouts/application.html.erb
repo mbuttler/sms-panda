@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tag %>
+    <!--default javascript-->
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= render 'layouts/stylesheets' %>
+  </head>
+  <body>
+    <% Announce.current(cookies.signed[:hidden_announce_ids]).each do |announce| %>
+      <%= div_for announce do %>
+        <%= announce.message %>
+        <%= link_to "hide announcement", hide_announce_path(announce), remote: true %>
+      <% end %>
+    <% end %>
+    <div class="container">
+	   	<%= render 'layouts/header' %>
+    	<section class="round">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+        	<%= yield %>
+      	</section>
+        <%= render 'layouts/footer' %>
+      	<%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>
+

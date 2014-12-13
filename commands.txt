@@ -1,0 +1,7 @@
+Remove all images
+
+docker rmi $(docker images -q)
+
+Kill containers and remove them
+
+docker rm $(docker kill $(docker ps -q))
