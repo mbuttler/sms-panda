@@ -1,10 +1,10 @@
 # README #
 
-Welcome to the SMS Panda [ ![Codeship Status for massaad/sms-phone-gateway](https://codeship.io/projects/1fe7fe60-3d32-0132-b129-42c319cbceea/status)](https://codeship.io/projects/43223)
+Welcome to the SMS Panda TODO:Fix this status  [ ![Codeship Status for massaad/sms-phone-gateway](https://codeship.io/projects/1fe7fe60-3d32-0132-b129-42c319cbceea/status)](https://codeship.io/projects/43223)
 
 ### What is this repository for? ###
 
-SMS gateway at zzv.ca
+SMS gateway to be used with Twilio
 
 ### How do I get set up? ###
 
