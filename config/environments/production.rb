@@ -72,7 +72,6 @@ Rails.application.configure do
     password: ENV['MAILOUTPASS']
   }
 
-
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -83,14 +82,6 @@ Rails.application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
-  # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
-
-  config.logger = RemoteSyslogLogger.new('logs2.papertrailapp.com', 30265)
-
-
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-   # ENV["DATABASE_URL"] = "postgres://xxyqhahgtkywbg:iuu4pV5GLgNveuMC2TrsB7Z0Sx@ec2-54-225-255-208.compute-1.amazonaws.com:5432/ded94iv0pljev0"
 end
