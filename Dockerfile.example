@@ -4,7 +4,7 @@ RUN mkdir /sms-panda
 WORKDIR /sms-panda
 ADD Gemfile /sms-panda/Gemfile
 RUN bundle install  --without=development --without=test
-ENV SECRET_KEY_BASE REPLACE_ME_NOW
+ENV SECRET_KEY_BASE REPLACE_ME_NOWvg
 ENV RAILS_ENV production
 ENV TSID insert
 ENV TTOKEN insert

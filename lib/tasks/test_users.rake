@@ -3,11 +3,11 @@ namespace :db do
   task :test_populate => :environment do
     Rake::Task['db:reset'].invoke
     User.create!(:name => "Burlinius Pandufson",
-                 :email => "",
+                 :email => "ieee1394+pandatest@gmail.com",
                  :phone => 613.0,
                  :admin => true,
-                 :password => "",
-                 :password_confirmation => "")
+                 :password => "passwordpandapass",
+                 :password_confirmation => "passwordpandapass")
     2.times do |n|
       name  = Faker::Name.name
       email = "ieee1394+pandatest#{n+1}@gmail.com"
