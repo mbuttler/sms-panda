@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   delete '/signout',   :to => 'sessions#destroy'
   get '/messagesincoming/:id/:salt_fragment',       :to => 'messages#messagesin'
   get '/announces/:id/hide', to: 'announces#hide', as: 'hide_announce'
+  get 'search-numbers', :to => 'buy_phones#search_numbers'
 end
