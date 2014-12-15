@@ -1,0 +1,21 @@
+<h1>Search phones</h1>
+  <table>
+    <thead>
+      <h3>Choose a number here </h3>
+      <tr>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+      <%  @numbers.each do |number| %>
+      <tbody>
+        <tr>
+          <form method='POST' action='/buy-number'>
+          <td> <label><%= number.friendly_name %></label> </td> <input type='hidden' name='PhoneNumber' value='<%= number.phone_number %>' />
+          <td> <input type='submit' value='BUY' /></td>
+        </tr>
+      </tbody>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    </form>
+   <%  end %>
+  </table>
+

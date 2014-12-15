@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
                                   :phone, :email_fwd, :admin,
                                   :balance, :charges
 
-  # has_many :contacts
-  # has_many :messages
   has_many :contacts, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_one :billing
@@ -33,7 +31,6 @@ class User < ActiveRecord::Base
                     :uniqueness   => true
 
   before_save :encrypt_password
-  # accepts_nested_attributes_for :contacts, :messages
 
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)

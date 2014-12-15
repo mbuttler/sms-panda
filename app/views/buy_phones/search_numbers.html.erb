@@ -1,0 +1,38 @@
+<h1>Search phones</h1>
+
+<form method="POST" action='/search-options'>
+<table>
+  <thead>
+    <h3>Find an SMS Panda number to buy</h3>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> <label>near postal code    (e.g. 94117): </label></td>
+        <td> <input type="text" size="6" name="in_postal_code"/><br/></td>
+      </tr>
+      
+      <tr>
+        <td> <label>near this other number (e.g. +6136562345): </label></td>
+        <td> <input type="text" size="7" name="near_number"/><br/></td>
+      </tr>
+
+      <tr>
+        <td> <label>matching this pattern  (e.g. 613***EPIC): </label></td>
+        <td> <input type="text" size="7" name="contains"/><br/></td>
+      </tr>
+  </tbody>
+</table>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+    <input type="submit" class="buy_button round" value="SEARCH"/>
+</form>
+
+<h4> Or Just buy a number if you're feeling lucky (You will only be charged for an available number) </h4>
+ <form method='POST' action='/buy-number'>
+  <label> Number </label>
+   <input type="text" size="7" name="PhoneNumber"/><br/>
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+    <input type="submit" class="buy_button round" value="BUY"/>
+  </form>
