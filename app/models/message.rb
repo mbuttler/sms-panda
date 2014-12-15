@@ -10,7 +10,6 @@ class Message < ActiveRecord::Base
   validates :from, :presence => true
 
   def self.sms_create(body, to, from)
-    sleep 3 #to do remove this!
     if Rails.env.production?
       account_sid = ENV['TSID']
       auth_token = ENV['TTOKEN']
