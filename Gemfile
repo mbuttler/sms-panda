@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 gem 'rails', 												'~> 4.1.8'
 gem 'sprockets-rails',							'~> 2.2.0'
+#Forgive me TODO
+gem 'protected_attributes',			'1.0.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', 									'~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +40,8 @@ gem 'json',													'1.7.7'
 # gem 'chef',													'11.16.4'
 gem 'knife-solo',										'0.4.2'
 gem 'librarian-chef', 							'0.0.4'
+gem 'daemons',											'1.1.9'
+gem 'delayed_job_active_record',		'4.0.2'
 
 group :development do
 	gem 'annotate', 									'2.6.5'
@@ -78,6 +82,3 @@ group :test, :development do
 	gem 'launchy',						'2.4.3'
 	gem 'poltergeist',				'1.5.1'
 end
- 
- #Forgive me TODO
- gem 'protected_attributes',			'1.0.8'
