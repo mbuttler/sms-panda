@@ -8,6 +8,26 @@ class Message < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :to, :presence => true
   validates :from, :presence => true
+
+  def self.sms_create(body, to, from)
+    sleep 3 #to do remove this!
+    if Rails.env.production?
+      account_sid = ENV['TSID']
+      auth_token = ENV['TTOKEN']
+      client = Twilio::REST::Client.new account_sid, auth_token
+      client.account.messages.create(
+        :body => body,
+        :to => to,
+        :from => from
+      )
+    elsif Rails.env.development?
+      puts "I'm sms create in development mode. Body: #{body}"
+    else 
+      puts "I'm an SMS in I-dont-know-lol or test mode"
+    end
+    rescue => e
+      logger.warn "Unable to sms, will ignore: #{e}" 
+  end
 end
 
 # == Schema Information
