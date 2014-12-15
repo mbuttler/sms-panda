@@ -1,7 +1,7 @@
 module MessagesHelper
 
   def sms_create(body, to, from)
-    if Rails.env.production?
+    if not Rails.env.production?
       account_sid = ENV['TSID']
       auth_token = ENV['TTOKEN']
       client = Twilio::REST::Client.new account_sid, auth_token

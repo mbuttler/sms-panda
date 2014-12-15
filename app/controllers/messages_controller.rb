@@ -31,9 +31,9 @@ class MessagesController < ApplicationController
   def create
     @title = "Write to a Panda"
     @message = current_user.messages.build(message_params)
-    if Rails.env.production? 
+    if not Rails.env.production? 
       create_charge(current_user)
-      sms_create(@message.message, @message.to.to_i, current_user.phone)
+      sms_create(@message.message, @message.to.to_i, current_user.phone.to_i )
     end
 
     if @message.save
