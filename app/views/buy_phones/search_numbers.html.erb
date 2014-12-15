@@ -1,6 +1,6 @@
 <h1>Search phones</h1>
 
-<form method="POST">
+<form method="POST" action='/search-options'>
 <table>
   <thead>
     <h3>Find an SMS Panda number to buy</h3>
@@ -25,5 +25,14 @@
       </tr>
   </tbody>
 </table>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
     <input type="submit" class="buy_button round" value="SEARCH"/>
+</form>
+
+<h4> Or Just buy a number if you're feeling lucky (You will only be charged for an available number) </h4>
+ <form method='POST' action='/buy-number'>
+  <label> Number </label>
+   <input type="text" size="7" name="PhoneNumber"/><br/>
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+    <input type="submit" class="buy_button round" value="BUY"/>
   </form>

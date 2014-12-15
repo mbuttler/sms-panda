@@ -15,8 +15,6 @@
         </div>
         <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
       <% end %>
-
-      
        <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
@@ -33,7 +31,7 @@
       <h2>Panda Info</h2>
       =====================
       <strong>Name</strong> <%= @user.name %><br />  
-      <strong>SMS Phone Number</strong> <%= @user.phone.to_i %> <br />
+      <strong>SMS Phone Number</strong> <%= @user.phone.to_i %>  <%= @number.to_s %><br />
       <a href="<%= messages_path %>">
       <strong>Panda Messages</strong> <%= @user.messages.count %><br /></a>
       <a href="<%= contacts_path %>">
@@ -44,7 +42,9 @@
       <strong> Charges:  </strong> <%= @charges.to_i %><br />
       <strong> Credits:  </strong> <%= @credits.to_i %><br />
       =====================
-      <strong> Top Up on credits </strong><br />(don't do this)
+      <%= link_to "Find a New Number $1", search_numbers_path %><br />
+
+      <strong> Top Up on credits </strong><br />(don't do this) <br />
       <iframe class="shopify-widget" frameborder="0" scrolling="no" src="//widgets.shopifyapps.com/products/sms-panda-credit?shop=sms-panda.myshopify.com&style=buy_now&product-variant-id=1013309272&color=grey&size=large&text=Add+a+%245+credit&destination=checkout" width="143" height="30"></iframe>
     </td>
   </tr>

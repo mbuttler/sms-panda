@@ -4,7 +4,7 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     User.create!(:name => "Burlinius Pandufson",
                  :email => "ieee1394+pandatest@gmail.com",
-                 :phone => 613.0,
+                 :phone => 6132225555.0,
                  :admin => true,
                  :password => "passwordpandapass",
                  :password_confirmation => "passwordpandapass")

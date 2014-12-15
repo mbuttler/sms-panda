@@ -1,0 +1,52 @@
+<h1>Search phones</h1>
+
+<!-- <form method="POST" action='/search-options'>
+<table>
+  <thead>
+    <h3>Find an SMS Panda number to buy, 3 options!</h3>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> <label>1) Near postal code (e.g. M4J4T0): </label></td>
+        <td> <input type="text" size="6" name="in_postal_code"/><br/></td>
+      </tr>
+      
+      <tr>
+        <td> <label>2) Near this other number (e.g. +6134202345): </label></td>
+        <td> <input type="text" size="7" name="near_number"/><br/></td>
+      </tr>
+
+      <tr>
+        <td> <label>3) Matching this pattern (e.g. 613**PANDA): </label></td>
+        <td> <input type="text" size="7" name="contains"/><br/></td>
+      </tr>
+  </tbody>
+</table>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+    <input type="submit" class="buy_button round" value="SEARCH"/>
+</form>
+ -->
+
+  <table>
+    <thead>
+      <h3>Choose a number here </h3>
+      <tr>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+      <%  @numbers.each do |number| %>
+      <tbody>
+        <tr>
+          <form method='POST' action='/buy-number'>
+          <td> <label><%= number.friendly_name %></label> </td> <input type='hidden' name='PhoneNumber' value='<%= number.phone_number %>' />
+          <td> <input type='submit' value='BUY' /></td>
+        </tr>
+      </tbody>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    </form>
+   <%  end %>
+  </table>
+
