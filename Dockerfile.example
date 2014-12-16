@@ -4,7 +4,6 @@ RUN mkdir /sms-panda
 WORKDIR /sms-panda
 ADD Gemfile /sms-panda/Gemfile
 RUN bundle install  --without=development --without=test
-RUN bundle exec rake jobs:work
 ENV SECRET_KEY_BASE REPLACE_ME_NOW
 ENV RAILS_ENV production
 ENV TSID insert
