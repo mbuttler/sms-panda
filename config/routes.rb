@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get '/search-numbers', :to => 'buy_phones#search_numbers'
   post '/search-options', :to => 'buy_phones#search_options'
   post '/buy-number', :to => 'buy_phones#buy_number'
+  if Rails.env.development?
+    match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+  end
 end
