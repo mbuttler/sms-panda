@@ -5,7 +5,6 @@
 @-webkit-keyframes pulsate{0%{color:#333;background:#fff}7%{color:#0c85ff;background:#001F3F}14%{color:#40a9ff;background:#0074D9}21%{color:#00a8e5;background:#7FDBFF}28%{color:#165656;background:#39CCCC}35%{color:#112c20;background:#3D9970}42%{color:#124f18;background:#2ECC40}49%{color:#00672d;background:#01FF70}56%{color:#665700;background:#FFDC00}63%{color:#ffd6b4;background:#FF851B}70%{color:#ffd1cf;background:#FF4136}77%{color:#e44e99;background:#85144B}84%{color:#f9a2e6;background:#F012BE}91%{color:#e679f6;background:#B10DC9}95%{color:#5e5e5e;background:#111}96%{color:#919191;background:#ddd}98%{color:#5d5d5d;background:#aaa}100%{color:#b3b3b3;background:#fff}}
 .pulsate-bg{-webkit-animation:pulsate 2000s linear infinite;animation:pulsate 2000s linear infinite}
 
-
 body {-webkit-animation:pulsate 3000s linear infinite;animation:pulsate 3000s linear infinite}
 
 header {
@@ -79,8 +78,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-
-
 /* Sign up button */
 
 a.signup_button {
@@ -95,7 +92,6 @@ a.signup_button {
   font-weight: bold;
   padding: 20px;
 }
-
 
 /* buy button */
 
@@ -132,13 +128,6 @@ footer nav {
   float: none;
 }
 
-
-
-
-
-
-
-
 /* User show page */
 
 table.profile {
@@ -166,10 +155,6 @@ td.sidebar {
 div.field, div.actions {
   margin-bottom: 10px;
 }
-
-
-
-
 
 .field_with_errors {
   margin-top: 10px;
@@ -211,7 +196,6 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
-
 
 /* Users eat bamboo */
 
@@ -334,6 +318,10 @@ form.new_message textarea {
   display: none;
 }
 
+/* The Animation Department *\
+|* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~*|
+\*==========================*/
+
 .pulsate-bg{}
 @-webkit-keyframes warning{0%{color:#FF851B;background: #FFDC00}25%{color:#FF4136;background: #111111;}75%{color:#0074D9;background: #FFDC00;}100%{color:#FFDC00;background: #FF851B;}}
 
@@ -342,6 +330,20 @@ form.new_message textarea {
   -webkit-animation:warning 75s linear infinite;animation:warning 75s linear infinite;
   border-bottom: solid 4px black;
   padding: 10px 0;
+  text-align: center;
+  a {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #6E5910;
+  }
+}
+
+.pulsate-bg{}
+@-webkit-keyframes bugs{0%{color:#09c;background: #FFFFFF}10%{color:#09c;background: #FFDC00;}95%{color:#09c;background: #FFDC00;}100%{color:#09c;background: #FFFFFF;}}
+
+.bugs {
+  -webkit-animation:bugs 25s linear infinite;
+  padding: 2px 0;
   text-align: center;
   a {
     font-size: 12px;
