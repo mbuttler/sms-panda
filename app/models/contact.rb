@@ -21,7 +21,7 @@ end
 # Table name: contacts
 #
 #  id         :integer          not null, primary key
-#  phone      :decimal(, )
+#  phone      :string(255)
 #  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime

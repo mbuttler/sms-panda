@@ -46,9 +46,9 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #  contact_id :integer
-#  phone      :decimal(, )
-#  to         :decimal(, )
-#  from       :decimal(, )
+#  phone      :string(255)
+#  to         :string(255)
+#  from       :string(255)
 #
 # Indexes
 #

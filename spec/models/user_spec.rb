@@ -210,7 +210,7 @@ end
 #  encrypted_password :string(255)
 #  salt               :string(255)
 #  admin              :boolean          default(FALSE)
-#  phone              :decimal(, )
+#  phone              :string(255)
 #  email_fwd          :boolean          default(FALSE)
 #  billing_id         :integer
 #
