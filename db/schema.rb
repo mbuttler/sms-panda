@@ -11,25 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215220552) do
+ActiveRecord::Schema.define(version: 20141216023129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "active_admin_comments", force: true do |t|
-    t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "announces", force: true do |t|
     t.text     "message"
@@ -49,7 +34,7 @@ ActiveRecord::Schema.define(version: 20141215220552) do
   end
 
   create_table "contacts", force: true do |t|
-    t.decimal  "phone"
+    t.string   "phone"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -80,9 +65,9 @@ ActiveRecord::Schema.define(version: 20141215220552) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "contact_id"
-    t.decimal  "phone"
-    t.decimal  "to"
-    t.decimal  "from"
+    t.string   "phone"
+    t.string   "to"
+    t.string   "from"
   end
 
   add_index "messages", ["user_id", "created_at"], name: "index_messages_on_user_id_and_created_at", using: :btree
@@ -103,7 +88,7 @@ ActiveRecord::Schema.define(version: 20141215220552) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              default: false
-    t.decimal  "phone"
+    t.string   "phone"
     t.boolean  "email_fwd",          default: false
     t.integer  "billing_id"
   end
