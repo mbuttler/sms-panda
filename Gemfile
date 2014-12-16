@@ -42,6 +42,7 @@ gem 'knife-solo',										'0.4.2'
 gem 'librarian-chef', 							'0.0.4'
 gem 'daemons',											'1.1.9'
 gem 'delayed_job_active_record',		'4.0.2'
+gem 'delayed_job_web',							'1.2.9'
 
 group :development do
 	gem 'annotate', 									'2.6.5'
