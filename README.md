@@ -1,6 +1,7 @@
 # README #
 
-Welcome to the SMS Panda TODO:Fix this status  [ ![Codeship Status for massaad/sms-phone-gateway](https://codeship.io/projects/1fe7fe60-3d32-0132-b129-42c319cbceea/status)](https://codeship.io/projects/43223)
+Welcome to the SMS Panda
+[ ![Codeship Status for amassaad/sms-panda](https://codeship.com/projects/ca32a8f0-67bc-0132-4efc-3ac858f34f77/status?branch=master)](https://codeship.com/projects/53188)
 
 ### What is this repository for? ###
 
