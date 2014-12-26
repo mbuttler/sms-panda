@@ -30,3 +30,4 @@ doc/
 /deployment/.vagrant
 Dockerfile
 /config/newrelic.yml
+codeship.pub
