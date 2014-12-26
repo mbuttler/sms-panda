@@ -50,7 +50,7 @@ class BuyPhonesController < ApplicationController
       bill_charge = bill.charges + 100
       bill_bal = bill.balance - 100 
       if bill.update_attributes(charges: bill_charge, balance: bill_bal )
-        puts "paid"
+        logger.warn  "paid"
       end
     end
 end

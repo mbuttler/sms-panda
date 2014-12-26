@@ -1,9 +1,12 @@
 FROM rails:4.1.8
+EXPOSE 8080
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
 RUN mkdir /sms-panda
 WORKDIR /sms-panda
 ADD Gemfile /sms-panda/Gemfile
-RUN bundle install  --without=development --without=test
+RUN bundle install --without=development --without=test
+CMD scripts/delayed_job start
+CMD bundle exec unicorn -p 8080 -c ./config/unicorn.rb -E production
 ENV SECRET_KEY_BASE REPLACE_ME_NOW
 ENV RAILS_ENV production
 ENV TSID insert
