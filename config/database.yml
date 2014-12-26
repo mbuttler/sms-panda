@@ -40,4 +40,4 @@ production:
   <<: *default
   username: docker
   password: docker
-  database: sms_panda_production
+  database: production
