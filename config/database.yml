@@ -38,6 +38,7 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
   username: docker
   password: docker
-  database: production
+  database: sms_panda_production
