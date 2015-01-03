@@ -43,6 +43,7 @@ gem 'json',									'1.7.7'
 gem 'daemons',								'1.1.9'
 gem 'delayed_job_active_record',			'4.0.2'
 gem 'delayed_job_web',						'1.2.9'
+gem 'figaro'
 
 group :development do
 	gem 'annotate', 						'2.6.5'

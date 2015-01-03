@@ -36,9 +36,17 @@ test:
   <<: *default
   database: sms_panda_test
 
+# production:
+#   <<: *default
+#   adapter: postgresql
+#   username: docker
+#   password: docker
+#   database: sms_panda_production
 production:
-  <<: *default
   adapter: postgresql
-  username: docker
-  password: docker
-  database: sms_panda_production
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
