@@ -16,6 +16,3 @@
 //= require turbolinks
 //= require_tree .
 //= require zeroclipboard
-jQuery ->
-  $('#message_to').autocomplete
-    source: "/phone_suggestions"

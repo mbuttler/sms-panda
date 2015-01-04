@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
   include ContactsHelper
   include UsersHelper
   include MessagesHelper
+  name = ENV['AUTH_USER']
+  pass = ENV['AUTH_PASS']
   
   unless Rails.env.test?
-    http_basic_authenticate_with name: ENV['AUTH_USER'], password: ENV['AUTH_PASS']
+    http_basic_authenticate_with name: name, password: pass
     unless Rails.env.development?
       force_ssl
     end
