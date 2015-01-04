@@ -67,7 +67,7 @@ class MessagesController < ApplicationController
     if @user.email_fwd?
       if Rails.env.production?
         puts "Forwarding email"
-        UserMailer.message_fwd(@user, @message).deliver
+        UserMailer.delay.message_fwd(@user, @message)
       end
     end
     rescue => e
