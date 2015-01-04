@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @contacts = @user.contacts.paginate(:page => params[:page])
     @messages = @user.messages.paginate(:page => params[:page])
     @title = @user.name
-    @twurl  = "http://alex:sms-panda@zzv.ca:8080/messagesincoming/" + @user.id.to_s + "/" + @user.salty_route.to_s
+    @twurl  = "https://ieee1394:password@sms-panda.herokuapp.com/messagesincoming/" + @user.id.to_s + "/" + @user.salty_route.to_s
 
     @balance = 0.0
     @charges = 0.0

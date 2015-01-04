@@ -64,14 +64,13 @@ class MessagesController < ApplicationController
       render 'pages/home'
     end
 
-    # if @user.email_fwd?
-    #   puts "yes"
-    #   if Rails.env.production?
-    #     UserMailer.message_fwd(@user, @message).deliver
-    #   end
-    # end
+    if @user.email_fwd?
+      if Rails.env.production?
+        UserMailer.delay.message_fwd(@user, @message).deliver
+      end
+    end
     rescue => e
-      logger.warn "\033[0;31m Unable to sms, will ignore: #{e} \033[0;37m" 
+      logger.warn "\033[0;31m Unable to sms in, will ignore: #{e} \033[0;37m" 
   end  
 
   # # PATCH/PUT /sms/1
