@@ -67,8 +67,9 @@ Rails.application.configure do
     :password => ENV['MANDRILL_PASSWORD'],
     :domain => 'sms-panda.herokuapp.com',
     :address => ENV['MANDRILL_HOST'],
-    :port => '587',
-    :authentication => :plain
+    :port => 587,
+    :enable_starttls_auto => true,
+    :authentication => :login
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
