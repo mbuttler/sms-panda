@@ -45,10 +45,15 @@ gem 'delayed_job_active_record',			'4.0.2'
 gem 'delayed_job_web',						'1.2.9'
 gem 'figaro'
 
+
 group :development do
 	gem 'annotate', 						'2.6.5'
 	gem 'bullet',							'4.14.0'
 	gem 'rack-mini-profiler'
+	gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+	gem 'capistrano',						'~> 3.3.5', require: false, group: :development
 end
 
 group :production do
@@ -58,7 +63,6 @@ group :production do
 	# Use unicorn as the app server
 	gem 'unicorn',							'~> 4.8.3'
 	gem 'unicorn-worker-killer'
-	gem 'capistrano',						'~> 3.3.5'
 	# gem 'remote_syslog_logger'
 end 
 

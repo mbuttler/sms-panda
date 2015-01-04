@@ -8,6 +8,10 @@ if ENV['RAILS_ENV'].to_s.eql?('production')
 
   # Max memory size (RSS) per worker
   use Unicorn::WorkerKiller::Oom, (192*(1024**2)), (256*(1024**2))
+
+  DelayedJobWeb.use Rack::Auth::Basic do |username, password|
+    username == 'alex' && password == 'sms-panda'
+  end
 end
 
 require ::File.expand_path('../config/environment',  __FILE__)
