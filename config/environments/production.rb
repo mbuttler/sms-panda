@@ -63,13 +63,12 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = 'sms-panda.herokuapp.com'
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "gmail.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['MAILOUTUSER'],
-    password: ENV['MAILOUTPASS']
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password => ENV['MANDRILL_PASSWORD'],
+    :domain => 'sms-panda.herokuapp.com',
+    :address => ENV['MANDRILL_HOST'],
+    :port => '587',
+    :authentication => :plain
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
