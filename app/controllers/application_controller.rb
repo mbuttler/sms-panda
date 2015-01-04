@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
   include MessagesHelper
   
   unless Rails.env.test?
-    http_basic_authenticate_with name: "alex", password: "sms-panda"
-    # unless Rails.env.development?
-    #   force_ssl
-    # end
+    http_basic_authenticate_with name: ENV['AUTH_USER'], password: ENV['AUTH_PASS']
+    unless Rails.env.development?
+      force_ssl
+    end
   end
 end
