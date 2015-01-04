@@ -1,12 +1,12 @@
 require 'thread'
-# require 'huginn_scheduler'
+require 'panda_scheduler'
 
 STDOUT.sync = true
 STDERR.sync = true
 
 def stop
   puts 'Exiting...'
-  # @scheduler.stop
+  @scheduler.stop
   @dj.stop
   # @stream.stop
 end
@@ -31,13 +31,13 @@ threads = []
 #   end
 # end
 
-# threads << Thread.new do
-#   safely do
-#     @scheduler = HuginnScheduler.new(frequency: ENV['SCHEDULER_FREQUENCY'])
-#     @scheduler.run!
-#     puts "Scheduler stopped ..."
-#   end
-# end
+threads << Thread.new do
+  safely do
+    @scheduler = PandaScheduler.new(frequency: 0.5)
+    @scheduler.run!
+    puts "Scheduler stopped ..."
+  end
+end
 
 threads << Thread.new do
   safely do
