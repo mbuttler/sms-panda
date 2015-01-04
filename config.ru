@@ -11,8 +11,6 @@ if ENV['RAILS_ENV'].to_s.eql?('production')
 
 end
 
-
-
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
 
