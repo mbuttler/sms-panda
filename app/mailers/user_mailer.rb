@@ -8,6 +8,6 @@ class UserMailer < ActionMailer::Base
   def message_fwd(user, messaage)
     @user = user
     @message = message
-    mail to: user.email, subject: "New SMS from #{@message.from}"
+    mail to: user.email, subject: "New SMS from #{@message}"
   end
 end
