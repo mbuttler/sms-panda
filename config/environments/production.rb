@@ -70,8 +70,7 @@ Rails.application.configure do
     :password => ENV['MANDRILL_PASSWORD'],
     :domain => 'heroku.com',
     :address => ENV['MANDRILL_HOST'],
-    :port => 587,
-    :authentication => :plain
+    :port => 587
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

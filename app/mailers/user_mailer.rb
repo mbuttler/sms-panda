@@ -1,13 +1,14 @@
 class UserMailer < ActionMailer::Base
   default from: "alex@atam.ca"
-  def signup_confirmation(user)
-    @user = user
-    mail to: user.email, subject: "Confirmation of Sign Up"
+
+  def signup_confirmation(email)
+    @email = user.email
+    mail(to: @email, subject: "Confirmation of Sign Up")
   end
 
-  def message_fwd(user, messaage)
-    @user = user
+  def message_fwd(email, messaage)
+    @email = email
     @message = message
-    mail to: user.email, subject: "New SMS from #{@message}"
+    mail (to: @email, subject: "New SMS")
   end
 end
