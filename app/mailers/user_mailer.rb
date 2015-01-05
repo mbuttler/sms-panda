@@ -7,7 +7,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def message_fwd(email, messaage)
-    @email = email
+    @email = user.email
     @message = message
     mail(to: @email, subject: "New SMS")
   end

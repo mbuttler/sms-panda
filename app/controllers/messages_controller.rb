@@ -67,8 +67,8 @@ class MessagesController < ApplicationController
     if @user.email_fwd?
       if Rails.env.production?
         puts "Forwarding email"
-        #TODO don't submit the user object, just email
-        UserMailer.message_fwd(@user, sms_body).deliver
+        @email = @user.email
+        UserMailer.message_fwd(@email, sms_body).deliver
         # UserMailer.delay.message_fwd(@user, @message)
       end
     end
