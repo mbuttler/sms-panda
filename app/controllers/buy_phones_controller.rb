@@ -2,6 +2,8 @@ class BuyPhonesController < ApplicationController
   before_filter :signed_in_user,  only: [ :search_options, :search_numbers, :buy_number ]
   # before_filter :correct_user,   :only => [ :search_options, :buy_number ]
 
+  error = "https://sms-email-gateway.herokuapp.com/smsin"
+
   def search_numbers
   end
 
@@ -32,7 +34,7 @@ class BuyPhonesController < ApplicationController
 
     @user = current_user
     twurl  = "http://alex:sms-panda@zzv.ca:8080/messagesincoming/" + @user.id.to_s + "/" + @user.salty_route.to_s
-    number.update(:sms_url => twurl, :sms_method => 'GET', :friendly_name => @user.email )
+    number.update(:sms_url => twurl, :sms_fallback_url => error, :sms_method => 'GET', :friendly_name => @user.email )
     # @user.phone = @number
     create_charge(current_user.id)
     @user.update_column(:phone, number.phone_number.to_i)
