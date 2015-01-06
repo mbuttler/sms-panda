@@ -38,23 +38,23 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = true
   Rails.application.routes.default_url_options[:host] = 'localhost'
 
 
   # Change mail delvery to either :smtp, :sendmail, :file, :test
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "gmail.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['MAILOUTUSER'],
-    password: ENV['MAILOUTPASS']
-  }
+  config.action_mailer.raise_delivery_errors = true
 
+  Rails.application.routes.default_url_options[:host] = 'sms-panda.herokuapp.com'
+  
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password => ENV['MANDRILL_PASSWORD'],
+    :domain => 'heroku.com',
+    :address => ENV['MANDRILL_HOST'],
+    :port => 587
+  }
 
   # Specify what domain to use for mailer URLs
   config.action_mailer.default_url_options = {host: "localhost:3000"}
