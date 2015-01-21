@@ -2,8 +2,8 @@ class PhoneSuggestion < ActiveRecord::Base
   attr_accessible :popularity, :phone
   belongs_to :user
 
-  def self.phone_for(prefix, uid)
-    suggestions = where("phone like ? AND user_id = ?", "#{prefix}_%", uid)
+  def self.phone_for(phone, uid)
+    suggestions = where("phone like ? AND user_id = ?", "#{phone}_%", uid)
     suggestions.order("popularity desc").limit(10).pluck(:phone)
   end
 

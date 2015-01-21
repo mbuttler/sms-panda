@@ -8,7 +8,6 @@ def stop
   puts 'Exiting...'
   @scheduler.stop
   @dj.stop
-  # @stream.stop
 end
 
 def safely(&block)
@@ -23,13 +22,6 @@ def safely(&block)
 end
 
 threads = []
-# threads << Thread.new do
-#   safely do
-#     @stream = TwitterStream.new
-#     @stream.run
-#     puts "Twitter stream stopped ..."
-#   end
-# end
 
 threads << Thread.new do
   safely do
