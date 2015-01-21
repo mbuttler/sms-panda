@@ -20,8 +20,6 @@ class PhoneSuggestion < ActiveRecord::Base
       suggestion.increment! :popularity
     end
   end
-
-
 end
 # == Schema Information
 #
