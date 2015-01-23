@@ -1,4 +1,7 @@
 # README #
+[![Issue Stats](http://issuestats.com/github/amassaad/sms-panda/badge/pr)](http://issuestats.com/github/amassaad/sms-panda) 
+[![Issue Stats](http://issuestats.com/github/amassaad/sms-panda/badge/issue)](http://issuestats.com/github/amassaad/sms-panda)
+
 
 Welcome to the SMS Panda
 [ ![Codeship Status for amassaad/sms-panda](https://codeship.com/projects/ca32a8f0-67bc-0132-4efc-3ac858f34f77/status?branch=master)](https://codeship.com/projects/53188)
